@@ -1,0 +1,24 @@
+#Enviroment parameters
+gpu_id: 0
+log_wandb: true
+train_neg_sample_args: ~
+training_neg_sample_num : 0
+
+metrics: ['Recall', 'Precision', 'MRR', 'NDCG', 'Hit', 'ShannonEntropy', 'TailPercentage']
+topk: [5,20]
+valid_metric: ndcg@5
+
+data_path: C:\Bakalauras\MyScripts\dataset
+load_col:
+  inter: [user_id, item_id, rating, timestamp, fit, rented_for]
+  item: [item_id, category, size]
+  user: [user_id, age, bust_size, weight, height, body_type]
+
+eval_args:
+  split:
+    LS: valid_and_test
+  order: TO
+  mode: uni100
+
+reproducability: false
+
